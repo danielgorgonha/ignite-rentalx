@@ -1,4 +1,4 @@
-import { ICategoriesRepository } from "../repositories/ICategoriesRepository";
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 interface IRequest {
   name: string;
@@ -10,7 +10,7 @@ interface IRequest {
  * [x] - Alterar o retorno de error
  * [x] - Acessr o repositorio
  */
-class CreateCategoryService {
+class CreateCategoryUseCase {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
   execute({ name, description }: IRequest): void {
@@ -21,7 +21,7 @@ class CreateCategoryService {
     }
 
     this.categoriesRepository.create({ name, description });
-  };
+  }
 }
 
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
